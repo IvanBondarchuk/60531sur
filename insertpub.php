@@ -8,7 +8,7 @@ if (strlen($_POST['name']) >= 3){
         $stmt->bindValue(':id', $_GET['id']);
         $stmt->bindValue(':id_category', $_POST['id_category']);
         $stmt->bindValue(':name', $_POST['name']);
-        $stmt->bindValue(':date_publication', date('Y-m-d H:i:s', time()));
+        $stmt->bindValue(':date_publication', date('Y-m-d'));
         $stmt->execute();
         $_SESSION['msg'] = "Публикация успешно добавлена";
         // return generated id
