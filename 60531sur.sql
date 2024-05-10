@@ -140,6 +140,25 @@ INSERT INTO `publications` (`id`, `id_journal`, `name`, `date_publication`) VALU
 --
 -- Индексы сохранённых таблиц
 --
+--
+-- Структура таблицы `user`
+--
+
+CREATE TABLE `user` (
+                        `id` int(10) UNSIGNED NOT NULL,
+                        `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                        `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                        `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                        `md5password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Пользователи';
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `md5password`) VALUES
+(1, 'Дмитрий', 'Кузин', '2repby@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99'),
+(2, 'Иван', 'Иванов', 'kuzin_da@surgu.ru', '5f4dcc3b5aa765d61d8327deb882cf99');
 
 --
 -- Индексы таблицы `author`
