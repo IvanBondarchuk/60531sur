@@ -1,10 +1,34 @@
 <?php
+    date_default_timezone_set('Asia/Yekaterinburg');
     require "dbconnect.php";
-
-    $result = $conn->query("SELECT * FROM publications") ;
-    echo "<h2>Таблица publications</h2>";
-    echo 'id'. ' '. 'id_journal'. ' '. 'name'. ' '. 'date_publication'."<br>";
-    while ($row = $result->fetch()) {
-        echo $row['id']. ' '. $row['id_journal']. ' '. $row['name']. ' '. $row['date_publication']."<br>";
-
+    require "auth.php";
+    require "menu.php";
+    echo '<main class="container" style="margin-top: 100px">';
+    switch ($_GET['page']){
+        case 'c':
+            if (isset($_SESSION['login'])) {
+                require "journ.php";
+            }
+            else{
+                $msg = 'Войдите в систему для просмотра и создания журналов';
+            }
+            break;
+        case 't':
+            if (isset($_SESSION['login'])){
+                require "pub.php";
+                require "pubform.php";
+            }
+            else{
+                $msg = 'Войдите в систему для просмотра и создания публикаций';
+            }
+            break;
     }
+    echo '</main>';
+
+    if(($_SESSION['msg']!='') or isset($msg)) {
+        require "message.php";
+        $_SESSION['msg']= '';
+    }
+
+    require "footer.php";
+?>
