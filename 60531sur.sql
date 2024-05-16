@@ -32,7 +32,7 @@ CREATE TABLE `author` (
   `id_publication` int NOT NULL COMMENT 'ID публикации',
   `id_person` int NOT NULL COMMENT 'ID персоны',
   `share_of_participation` int NOT NULL COMMENT 'Доля участия'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `author`
@@ -57,7 +57,7 @@ INSERT INTO `author` (`id`, `id_publication`, `id_person`, `share_of_participati
 CREATE TABLE `journal` (
   `id` int NOT NULL COMMENT 'ID журнала',
   `name` varchar(255) NOT NULL COMMENT 'Название журнала'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `journal`
@@ -77,7 +77,7 @@ CREATE TABLE `link` (
   `id` int NOT NULL COMMENT 'ID ссылки',
   `id_publication` int NOT NULL COMMENT 'ID публикации',
   `id_publication_link` int NOT NULL COMMENT 'ID публикации ссылки'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `link`
@@ -96,9 +96,9 @@ INSERT INTO `link` (`id`, `id_publication`, `id_publication_link`) VALUES
 
 CREATE TABLE `person` (
   `id` int NOT NULL COMMENT 'ID персоны',
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'ФИО персоны',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ФИО персоны',
   `birthdate` date DEFAULT NULL COMMENT 'Дата рождения персоны'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `person`
@@ -122,7 +122,7 @@ CREATE TABLE `publications` (
   `id_journal` int NOT NULL COMMENT 'ID журнала',
   `name` varchar(255) NOT NULL COMMENT 'Наименование',
   `date_publication` date NOT NULL COMMENT 'Дата публикации'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `publications`
