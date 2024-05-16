@@ -7,7 +7,7 @@
     switch ($_GET['page']){
         case 'c':
             if (isset($_SESSION['login'])) {
-                require "journ.php";
+                require "journal.php";
             }
             else{
                 $msg = 'Войдите в систему для просмотра и создания журналов';
