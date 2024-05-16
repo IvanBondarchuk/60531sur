@@ -1,36 +1,27 @@
-<div class="container">
+<h1>Публикации:</h1>
+<?php
 
-
-
-
-
-    <h1>Публикации:</h1>
-    <div class="list-group">
-
-
-
-
-        <?php
-
-        $result = $conn->query("SELECT *, publications.id AS id_publication, journal.name AS cname, publications.name AS tname FROM publications, journals WHERE publications.id_journal=journals.id AND task.id_user=".$_SESSION['id']);
+        $result = $conn->query("SELECT publications.id AS id, publications.name AS pname, date_publication as created_at, id_journal FROM publications LEFT OUTER JOIN journal ON publications.id_journal=journal.id GROUP BY publications.id");
         while ($row = $result->fetch()) {
 
             echo '
 
-            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-            <img src="'.$row['picture_url'].'" alt="twbs" width="32" height="32" class=flex-shrink-0">
-            <div class="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                    <h6 class="mb-0">'.$row['tname'].'</h6>
-                </div>
-
-                <small class="opacity-50">Создана: '.$row['created_at'].'</small>
-            </div>
-        </a>
+            <div class="card border-dark mb-3" >
+            <div class="card-header"> ' . 'Название публикации - ' . $row['pname'] .'</div>
+            <div class="card-body text-dark">
+                <div class="row g-0"> 
+                    <div class="col-md-10">
+                    <a class="nav-link" href="/index.php?page=n" >                  
+                        <p class="card-text">' . 'ID журнала - ' .$row['id_journal']  .'</>
+                        <p class="card-text">' . 'Дата публикации- ' .$row['created_at']  .'</>
+                        </a>          
+                    </div>
+                    <div class="col-md-2">
+                        <a href="deletepub.php?id='.$row['id'].'" class="btn btn-danger">Удалить</a>
+                    </div>                    
+                </div>             
+            </div>           
+        </div>
 ';
-
-
         }
         ?>
-    </div class="list-group">
-</div>

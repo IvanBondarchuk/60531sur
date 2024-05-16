@@ -9,7 +9,7 @@
 
 <header class="container">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SoF</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,10 +21,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=c">Публикации</a>
+                        <a class="nav-link" href="index.php?page=c">Журналы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=t">Журналы</a>
+                        <a class="nav-link" href="index.php?page=t">Публикации</a>
                     </li>
                 </ul>
 

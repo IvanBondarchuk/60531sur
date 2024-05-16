@@ -32,5 +32,5 @@ if (strlen($_POST['name']) >= 3){
 else $_SESSION['msg'] = "Ошибка добавления журнала: имя журнала должно содержать не менее 3х символов";
 
 // перенаправление на страницу категорий
-header('Location: http://69531sur/index.php?page=c');
+header('Location: http://60531sur/index.php?page=c');
 exit( );

@@ -1,10 +1,10 @@
-<h1>:Журналы публикаций:</h1>
+<h1>:Журналы:</h1>
 <?php
 $result = $conn->query("SELECT journal.id AS id, journal.name AS jname, count(publications.id) as C FROM journal LEFT OUTER JOIN publications ON publications.id_journal=journal.id GROUP BY journal.id");
 
 while ($row = $result->fetch()) {
 //style="max-width: 18rem;"
-    echo'
+    echo '
         
         <div class="card border-dark mb-3" >
             <div class="card-header">Количество публикаций: ' . $row['C'] . '</div>
@@ -16,7 +16,7 @@ while ($row = $result->fetch()) {
                     </a>
                     </div>
                     <div class="col-md-1">
-                        <a href="deletejour.php?id='.$row['id'].'" class="btn btn-danger">Удалить</a>
+                        <a href="deletejour.php?id=' . $row['id'] . '" class="btn btn-danger">Удалить</a>
                     </div>
                 </div>
             </div>
@@ -24,10 +24,6 @@ while ($row = $result->fetch()) {
         </div>
  
     ';
-//    echo '<tr>';
-//    echo '<td>' .  $row['id']. '</td><td>' . $row['name'] . '</td>';
-//    echo '<td><a href=deletecategory.php?id='.$row['id'].'>Удалить</a></td>';
-//    echo '</tr>';
 }
 ?>
 

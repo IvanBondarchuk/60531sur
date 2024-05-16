@@ -6,7 +6,7 @@ if (strlen($_POST['name']) >= 3){
         $sql = 'INSERT INTO publications(id,id_journal,name,date_publication) VALUES(:id,:id_journal,:name,:date_publication)';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':id', $_GET['id']);
-        $stmt->bindValue(':id_category', $_POST['id_category']);
+        $stmt->bindValue(':id_journal', $_POST['id_journal']);
         $stmt->bindValue(':name', $_POST['name']);
         $stmt->bindValue(':date_publication', date('Y-m-d'));
         $stmt->execute();
